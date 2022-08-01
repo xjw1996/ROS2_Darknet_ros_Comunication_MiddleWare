@@ -1,0 +1,19 @@
+ros2 pkg create --build-type ament_cmake yolo_result_pubsubこのコマンドは最も基本的なパッケージ作成するためのコマンドである。他の依存パッケージは自分で追加しないといけません
+
+ros2 pkg create --build-type ament_cmake yolo_communication --dependencies rclcpp std_msgs image_transport
+
+source ~/.bashrc 
+source install/setup.bash
+colcon build --packages-select yolo_communication
+
+ros2 param set yolo_comunication_node zed2i_status 0
+
+
+ros2 run turtlesim turtlesim_node
+ros2 run turtlesim turtle_teleop_key
+
+
+https://blog.csdn.net/zeye5731/article/details/124314347
+
+Exception while calling service of node '/yolo_comunication_node': None
+
